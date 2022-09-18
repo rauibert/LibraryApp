@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('books', function () {
+    return "Aqui va una web de libros";
+});
+
+Route::get('books/create', function () {
+    return "Aqui insertaremos nuevos libros en nuestra libreria";
+});
