@@ -19,9 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('books', [BookController::class, 'index']);
-
-Route::get('books/create', [BookController::class, 'create']);
-
-Route::get('books/{book}', [BookController::class, 'show']);
-
+//Desde Laravel 9 se pueden usar route groups
+Route::controller(BookController::class)->group(function(){
+    Route::get('books','index');
+    Route::get('books/create', 'create');
+    Route::get('books/{book}', 'show');
+});
