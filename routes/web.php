@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('books', 'BookController@index');
+Route::get('books', [BookController::class, 'index']);
 
-Route::get('books/create', function () {
-    return "Aqui insertaremos nuevos libros en nuestra libreria";
-});
+Route::get('books/create', [BookController::class, 'create']);
+
+Route::get('books/{book}', [BookController::class, 'show']);
+
