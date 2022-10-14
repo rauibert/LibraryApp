@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     public function index(){
-        return "Libros y más libros";
+        return view('books.index');
     }
 
     public function create(){
-        return "Aqui insertaremos nuevos libros en nuestra libreria";
+        return view('books.create');
     }
 
     public function show($book){
-        return "Ha elegido el libro: $book";
+        return view('books.show', compact('book'));
     }
 }
