@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Book;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,20 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        $book = new Book();
+       $this->call(BookSeeder::class);
 
-        $book->name = 'El Quijote';
-        $book->ISBN = 'ISBN213453';
-        $book->author = 'Cervantes';
-        $book->description = 'Don Quijote de la Mancha​ es 
-                            una novela escrita por el español
-                            Miguel de Cervantes Saavedra. 
-                            Publicada su primera parte con el
-                             título de El ingenioso hidalgo
-                              don Quijote de la Mancha a comienzos';
-        $book->image = '/image/quijote.png';
-
-        $book->save();
-        
     }
 }
