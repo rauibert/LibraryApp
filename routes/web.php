@@ -22,4 +22,5 @@ Route::controller(BookController::class)->group(function(){
     Route::get('books','index');
     Route::get('books/create', 'create');
     Route::get('books/{book}', 'show');
+    Route::get('books/year/{year}', 'filterYear');
 });

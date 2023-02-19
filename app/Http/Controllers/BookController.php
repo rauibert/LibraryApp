@@ -17,4 +17,8 @@ class BookController extends Controller
     public function show($book){
         return view('books.show', compact('book'));
     }
+
+    public function filterYear($year){
+        return view('books.filter', compact('year'));
+    }
 }
